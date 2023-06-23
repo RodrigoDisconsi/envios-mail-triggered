@@ -10,8 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const corsOptions = {
-    origin: '*',
-    optionsSuccessStatus: 200
+    origin: false,
 }
 
 app.post('/send-mail', cors(corsOptions), async (req, res) => {
