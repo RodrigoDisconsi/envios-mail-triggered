@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodeMailer = require('nodemailer');
@@ -16,8 +17,8 @@ app.post('/send-mail', async (req, res) => {
             port: 465,
             secure: true,
             auth: {
-                user: 'Grupotriggered@gmail.com',
-                pass: 'cpigwsdltcbplbzu',
+                user: process.env.MAIL,
+                pass: process.env.PASS,
             },
         });
 
