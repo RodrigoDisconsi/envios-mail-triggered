@@ -9,11 +9,9 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const corsOptions = {
-    origin: false,
-}
+app.use(cors());
 
-app.post('/send-mail', cors(corsOptions), async (req, res) => {
+app.post('/send-mail', async (req, res) => {
     try{
         const { aceptado, nombreUsuario, mail } = req.body;
 
